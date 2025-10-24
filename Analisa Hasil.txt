@@ -1,0 +1,19 @@
+A. Client-Server Multithread
+   1. Server Multithread jauh lebih efisien untuk banyak 
+      client karena tiap koneksi ditangani secara paralel 
+      dalam thread berbeda. Tidak ada client yang perlu 
+      menunggu client lain selesai.
+B. Client-Server Singlethread
+   1. Server Singlethread cocok hanya untuk koneksi sederhana. 
+      Namun, ketika banyak client mengirim request secara bersamaan, 
+      performa turun karena koneksi ditangani secara bergantian, bukan paralel.
+C. Perbandingan Kinerja 
+   
+   ASPEK                         SINGLE THREAD                                       MULTITHREAD
+   
+   Model Eksekusi                Sequential                                          Paralel
+   Penanganan Client             1 Client Per Waktu                                  Banyak Client Bersamaan
+   Responsivitas                 Lambat Saat Banyak Client                           Cepat dan Efisien
+   Kemungkinan Eror              Connecttion Lost Saat Antrian Penuh                 Minim Eror
+   Kompleksitas Kode             Sederhana                                           Lebih Kompleks
+   Waktu Total                   Lama                                                Singkat (31 detik untuk 10 Client)
